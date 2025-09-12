@@ -1,0 +1,70 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Student Performance Insights",
+      "github": "https://github.com/RudainaAly54/Student-Performance-Insights",
+      "live": null,
+      "status": "done",
+      "tech": ["pandas", "numpy", "scikit-learn", "ML", "matplotlib", "seaborn"],
+      "field": "Data Science",
+      "img": "images/student insights",
+      "description": "Final deliverable of my internship at MAIM Digital Solutions, analyzing factors that influence student achievement. Used Pandas, NumPy, Matplotlib, and Seaborn for data analysis, then applied ML models in Scikit-learn to predict grades with strong accuracy."
+    },
+    {
+      "id": 2,
+      "title": "Card Details Form",
+      "github": "https://github.com/RudainaAly54/card-details-form-main",
+      "live": "https://cards-details-forms.netlify.app/",
+      "status": "done",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "field": "Frontend",
+      "img": "images/interactive card",
+      "description": "Built an interactive credit card form with real-time preview, input validation, and smooth animations. Designed to be responsive across devices for a seamless user experience."
+    },
+    {
+      "id": 3,
+      "title": "BinWise",
+      "github": null,
+      "live": null,
+      "status": "in progress",
+      "tech": ["React", "JavaScript", "HTML", "Express"],
+      "field": "Frontend",
+      "img": "images/logo",
+      "description": "React + Express web app in progress, focusing on clean architecture and smooth frontend–backend integration. Aiming to deliver a scalable and interactive application."
+    },
+    {
+      "id": 4,
+      "title": "E-Commerce Product Page",
+      "github": "https://github.com/RudainaAly54/e-commerce-product-page-main",
+      "live": "https://ecommerce-product-p.netlify.app/",
+      "status": "done",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "field": "Frontend",
+      "img": "images/ecommerce",
+      "description": "Responsive product page built from a Figma design with gallery, lightbox, and cart functionality. Showcases how static designs can be turned into polished, interactive websites."
+    },
+    {
+      "id": 5,
+      "title": "AI Sentiment Analysis",
+      "github": "https://github.com/RudainaAly54/AI-sentiment-analysis-by-twitter-web-scrapping",
+      "live": null,
+      "status": "done",
+      "tech": ["pandas", "tweepy", "mongodb", "matplotlib", "seaborn", "webscrapping"],
+      "field": "Data Science",
+      "img": "images/sentiment analysis",
+      "description": "Scraped tweets with Tweepy, stored them in MongoDB, and analyzed sentiment using Pandas. Visualized results with Matplotlib and Seaborn to reveal trends in public opinion."
+    },
+    {
+      "id": 6,
+      "title": "Student Performance Visualization App",
+      "github": null,
+      "live": null,
+      "status": "in progress",
+      "tech": ["HTML", "React", "JavaScript", "D3.js"],
+      "field": "Merged",
+      "img": "images/merged",
+      "description": "Interactive dashboard app in progress using React and D3.js. Designed to make student performance data accessible through dynamic charts and visual insights."
+    }
+  ]
+}
