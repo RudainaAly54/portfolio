@@ -1,0 +1,570 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Rudaina Aly Portfolio</title>
+    <style type="text/tailwindcss">
+        @theme {
+            /* 🎨 Custom Colors */
+    --color-primary: #4388d6;
+    --color-primary-dark: #4277ff;
+    --color-primary-mid: #735aff;
+    --color-primary-light: #9227fb;
+
+    --color-text-light: #cbd9f7;
+    --color-text-alt: #ccc8ff;
+    --color-gray: #8d9094;
+
+    --color-bg-dark: #010102;
+    --color-bg-black: #000;
+
+      --color-light: #d1cedc;
+    --color-black: #040404;
+    --color-blue-dark: #344454;
+    --color-navy: #0f1228;
+    --color-maroon-dark: #240b1d;
+    --color-sky: #3ea4f4;
+    --color-slate: #192434;
+    --color-indigo-dark: #1d244f;
+    --color-yellow: #f7b945;
+    --color-purple: #441447;
+
+            --animate-upanddown: upanddown 2s ease-in infinite;
+            @keyframes upanddown {
+                0%, 100%{
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+        }
+    </style>
+  </head>
+  <body class="bg-linear-to-r from-[#010102] to-[#000] text-[#8d9094] h-screen font-sans">
+<!-- Nav Bar Start -->
+     <nav class=" z-1 fixed w-full flex  justify-between p-5 pr-10 pl-10 bg-[#010102]">
+        <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Rud</h2>
+        <ul class="flex justify-evenly gap-10 text-15 max-sm:hidden">
+            <li class="transform hover:translate-y-[-5px] transition-all duration-300 hover:text-white"> <a
+      href="#hero"
+      class=" 
+      relative after:content-[''] after:absolute after:left-0 after:top-full 
+             after:w-0 hover:after:w-full after:h-[3px] 
+             after:bg-gradient-to-r after:from-[#4277ff] after:via-[#735aff] after:to-[#9227fb] 
+             after:rounded-[15px] after:transition-all after:duration-200"
+    >Home</a></li>
+            <li class="transform hover:translate-y-[-5px] transition-all duration-300 hover:text-white"> <a
+      href="#about"
+      class=" 
+      relative after:content-[''] after:absolute after:left-0 after:top-full 
+             after:w-0 hover:after:w-full after:h-[3px] 
+             after:bg-gradient-to-r after:from-[#4277ff] after:via-[#735aff] after:to-[#9227fb] 
+             after:rounded-[15px] after:transition-all after:duration-200"
+    >About</a></li>
+            <li class="transform hover:translate-y-[-5px] transition-all duration-300 hover:text-white"> <a
+      href="#skills"
+      class=" 
+      relative after:content-[''] after:absolute after:left-0 after:top-full 
+             after:w-0 hover:after:w-full after:h-[3px] 
+             after:bg-gradient-to-r after:from-[#4277ff] after:via-[#735aff] after:to-[#9227fb] 
+             after:rounded-[15px] after:transition-all after:duration-200"
+    >Skills</a></li>
+            <li class="transform hover:translate-y-[-5px] transition-all duration-300 hover:text-white"> <a
+      href="#projects"
+      class=" 
+      relative after:content-[''] after:absolute after:left-0 after:top-full 
+             after:w-0 hover:after:w-full after:h-[3px] 
+             after:bg-gradient-to-r after:from-[#4277ff] after:via-[#735aff] after:to-[#9227fb] 
+             after:rounded-[15px] after:transition-all after:duration-200"
+    >Projects</a></li>
+            <li class="transform hover:translate-y-[-5px] transition-all duration-300 hover:text-white"> <a
+      href="#experiance"
+      class=" 
+      relative after:content-[''] after:absolute after:left-0 after:top-full 
+             after:w-0 hover:after:w-full after:h-[3px] 
+             after:bg-gradient-to-r after:from-[#4277ff] after:via-[#735aff] after:to-[#9227fb] 
+             after:rounded-[15px] after:transition-all after:duration-200"
+    >Experience</a></li>
+            <li class="transform hover:translate-y-[-5px] transition-all duration-300 hover:text-white"> <a
+      href="#contact"
+      class=" 
+      relative after:content-[''] after:absolute after:left-0 after:top-full 
+             after:w-0 hover:after:w-full after:h-[3px] 
+             after:bg-gradient-to-r after:from-[#4277ff] after:via-[#735aff] after:to-[#9227fb] 
+             after:rounded-[15px] after:transition-all after:duration-200"
+    >Contact</a></li>
+        </ul>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="sm:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-50">
+            <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+     </nav>
+     
+     <!-- Mobile Navigation Overlay -->
+     <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out sm:hidden">
+        <!-- Close Button -->
+        <button id="mobile-menu-close" class="absolute top-6 right-6 text-white hover:text-[#4388d6] transition-colors duration-300 z-50">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#hero" class="mobile-nav-link text-2xl text-white hover:text-[#4388d6] transition-colors duration-300 transform hover:scale-110">Home</a>
+            <a href="#about" class="mobile-nav-link text-2xl text-white hover:text-[#4388d6] transition-colors duration-300 transform hover:scale-110">About</a>
+            <a href="#skills" class="mobile-nav-link text-2xl text-white hover:text-[#4388d6] transition-colors duration-300 transform hover:scale-110">Skills</a>
+            <a href="#projects" class="mobile-nav-link text-2xl text-white hover:text-[#4388d6] transition-colors duration-300 transform hover:scale-110">Projects</a>
+            <a href="#experiance" class="mobile-nav-link text-2xl text-white hover:text-[#4388d6] transition-colors duration-300 transform hover:scale-110">Experience</a>
+            <a href="#contact" class="mobile-nav-link text-2xl text-white hover:text-[#4388d6] transition-colors duration-300 transform hover:scale-110">Contact</a>
+        </div>
+     </div>
+    <!-- Nav Bar End -->
+
+    <!-- Hero Section Start -->
+     <section id="hero" class=" w-full flex justify-between items-center gap-10  h-screen w-full p-0 pt-20 m-0 max-sm:gap-5 max-sm:flex-col max-sm:mb-60  max-sm:w-[130vw]">
+        <div class=" flex  flex-col items-center justify-center gap-10 ml-5 ">
+            <h1 class="text-8xl font-bold bg-gradient-to-r from-[#cbd9f7]  to-[#ccc8ff] bg-clip-text text-transparent relative text-center
+        max-md:text-8xl max-sm:text-5xl">
+            Hey, there I'm
+            <span class="block"> Rudaina Aly</span> </h1>
+            <div class=" content-[''] h-1 w-30 bg-gradient-to-r from-[#4277ff] via-[#735aff] to-[#9227fb] 
+        absolute left-[30%] bottom-[45%] max-md:top-[50%] max-sm:top-[23%]"></div>
+            <p class="text-2xl text-white max-md:text-md max-sm:text-sm max-md:text-center max-sm:text-center">Building responsive, interactive websites with 
+                <span class="text-[#4388d6] max-sm:block">Data Science edge</span></p>
+            <div class=" flex gap-5 max-sm:flex-col max-sm:relatvie">
+                <button id="Workbutton" class="bg-gradient-to-r from-[#4277ff] via-[#735aff] to-[#9227fb]
+                w-37 h-12 rounded-[10px] text-white  cursor-pointer
+                active:opacity-[0.5]  transform hover:scale-110 transition duration-300">View My Work</button>
+                <button 
+                class="contact w-37 h-12 rounded-[10px] text-white border-solid border-1 border-[#3c4650] cursor-pointer
+                hover:border-[#4388d6]  hover:bg-[rgba(67,136,214,0.2)] transition duration-300">Contact</button>
+            </div>
+            <div class="border-1 border-solid border-[#8d9094] 
+            h-10 w-6 rounded-xl flex justify-center pt-1 animate-upanddown max-sm:hidden">
+            <div class="h-3 w-1 bg-[#8d9094] rounded-xl"></div></div>
+        </div>
+
+        <img src="images/meme3.png" alt="Rudaina" class="w-[400px]  max-sm:self-end rounded-[15px] ">
+
+     </section>
+    <!-- Hero Section End -->
+
+    <!--About Section Start-->
+    <section id="about" class="h-screen p-10  max-sm:w-[130vw]">
+        <h2 class="text-center text-5xl text-white relative
+        after:content-[' '] after:w-15 after:h-1 after:bg-gradient-to-r after:from-[#4277ff] after-[#735aff] after:to-[#9227fb]
+        after:top-full after:left-[50%] after:absolute mb-10
+        ">About Me</h2>
+        <div class="flex gap-1 items-center justify-center max-sm:flex-col max-sm:gap-5 max-md:flex-col max-md:gap-5">
+        <div class="flex flex-col gap-5  justify-center">
+            <div class="bg-[rgba(25,35,50,0.9)] text-white p-5 border-2 border-solid border-[#344454] rounded-xl w-[100%] text-[16px] shadow-lg relative max-sm:w-[100%] max-md:w-[100%]">
+            <p>
+                 I'm a Front-End Developer with a 
+            <span class="text-[#4388d6]"> Data Science edge.</span>
+        </p>
+            <div class="h-2 w-2 absolute bg-[#266ad0] rounded-full top-4 right-4"></div>
+        </div>
+
+        <div class="bg-[rgba(25,35,50,0.9)] text-white p-5 border-2 border-solid border-[#344454] rounded-xl w-[100%] text-[16px] relative max-sm:w-[100%] max-md:w-[100%]">
+            <p>
+                I build responsive, interactive, and user-friendly websites, whether it's a simple landing page, 
+                a full web app, or converting Figma/Adobe XD designs into pixel-perfect websites.
+            </p>
+                <div class="h-2 w-2 absolute bg-[#8b3ed0] rounded-full top-4 right-4"></div>
+        </div>
+
+        <div class="bg-[rgba(25,35,50,0.9)] text-white p-5 border-2 border-solid border-[#344454] rounded-xl w-[100%] text-[16px] relative max-sm:w-[100%] max-md:w-[100%]">
+            <p>
+                On top of that, I've tackled data projects with Python, pandas, and visualization tools, 
+                which gives you an analytical, problem-solving mindset that I bring to every web project.
+            </p>
+                <div class="h-2 w-2 absolute bg-[#266ad0] rounded-full top-4 right-4"></div>
+        </div>
+        </div>
+
+        <div class="flex flex-col gap-5 items-center mb-10">
+            <div class="bg-gradient-to-b from-[rgba(13,15,42,255)] to-[rgba(25,8,41,255)] text-white p-5 border-2 border-solid border-[#120d2a] rounded-xl w-[80%] text-[16px] max-sm:w-[100%] max-md:w-[100%]">
+                <h3 class="text-[#3ea4f4] mb-5 text-2xl">
+                    🔹What sets me apart?
+                </h3>
+                <p>
+                    I combine front-end development with data science knowledge on demand — 
+                    so together, we can create solutions that aren't just visually appealing, but also logical, data-driven, and insightful.
+                </p>
+            </div>
+            <div class="bg-gradient-to-b from-[rgba(27,7,40,255)] to-[rgba(38,7,23,255)] text-white p-5 border-2 border-solid border-[#051424] rounded-xl w-[80%] text-[16px] max-sm:w-[100%] max-md:w-[100%]">
+                <h3 class="text-[#8852b3] mb-5 text-2xl">
+                    🔹Why is it important?
+                </h3>
+                <p>
+                    You have data, but data alone doesn't solve problems. I know how to turn it into
+                     smart decisions. That's the real power of Data Science—and it's the extra edge I bring to front-end development.
+                </p>
+            </div>
+            <div class="bg-gradient-to-b from-[rgba(7,17,41,255)] to-[rgba(4,23,31,255)] text-white p-5 border-2 border-solid border-[rgba(4,23,31,255)] rounded-xl w-[80%] text-[16px] max-sm:w-[100%] max-md:w-[100%]">
+                <h3 class="text-[#0195af] mb-5 text-2xl">
+                    🔹The Result
+                </h3>
+                <p>
+                    When you and I work together, you don't just get a responsive, user-friendly website. 
+                    You get a site that's built with logic, clarity, and insights—helping you understand 
+                    your users better and make smarter choices for your business.
+                </p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!--About Section End-->
+
+    <!--Skills Section Start -->
+    <section id="skills" class="mt-30 pt-5 p-20 bg-[#05080e]  max-sm:mt-150 flex flex-col justify-center items-center gap-5 max-sm:pr-2 max-sm:pl-2 max-sm:w-[130vw]">
+    <h2 class="text-center text-5xl text-white relative
+        after:content-[' '] after:w-15 after:h-1 after:bg-gradient-to-r after:from-[#4277ff] after-[#735aff] after:to-[#9227fb]
+        after:top-full after:left-[50%] after:absolute mb-10
+        ">Skills & Expertise</h2>
+        <p class="text-center text-md">A comprehensive toolkit for creating data-driven, responsive web applications</p>
+
+        <!-- Skills -->
+        <div class="mt-10  grid grid-cols-3 gap-5 max-md:grid-cols-2 max-sm:grid-cols-1 ">
+            <!-- Frontend start-->
+            <div class=" bg-[rgba(5,16,28,255)] p-5 border-solid border-2 rounded-xl border-[#0e294f] flex flex-col gap-2 transform hover:-translate-y-5 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#2584ff] to-[#15a9ef]  rounded-xl text-white font-bold  text-2xl  flex justify-center items-center transform hover:-translate-y-5 transition duration-1000">
+             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 8L5 11.6923L9 16M15 8L19 11.6923L15 16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+  </svg>
+                </div>
+                <h3 class="font-bold bg-gradient-to-r from-[#2584ff] to-[#15a9ef] bg-clip-text text-transparent text-xl">
+                    Frontend Development
+                </h3>
+                <ul class="text-white list-disc text-sm pl-5 flex flex-col gap-2">
+                    <li class="marker:text-blue-400">HTML5</li>
+                    <li class="marker:text-blue-400">CSS3</li>
+                    <li class="marker:text-blue-400">Tailwind</li>
+                    <li class="marker:text-blue-400">JavaScript(ES6)</li>
+                    <li class="marker:text-blue-400">TypeScript</li>
+                </ul>
+                <div class="absolute w-8 h-8 rounded-bl-md rounded-tr-md bg-[rgba(14,41,79,255)] top-0 right-0"></div>
+            </div>
+            <!-- Front end end -->
+
+            <!-- Data Science start -->
+            <div class=" bg-[rgba(25,8,25,255)]  p-5 border-solid border-2 rounded-xl border-[#3f1741] flex flex-col gap-2 transform hover:-translate-y-5 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#bb49f0] to-[#ec3caa]  rounded-xl text-white font-bold  text-2xl  flex justify-center items-center transform hover:-translate-y-5 transition duration-1000">
+                    <svg height="40px" width="40px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#fcfcfc" stroke="#fcfcfc"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#ffffff;} </style> <g> <path class="st0" d="M459.991,82.262c-5.818-13.388-15.866-24.916-28.61-34.854c-19.179-14.896-44.758-26.522-74.674-34.691 C326.789,4.575,292.498,0,256,0c-55.622,0.036-106.071,10.548-143.848,28.374c-18.889,8.959-34.692,19.76-46.31,32.713 c-5.791,6.48-10.52,13.542-13.832,21.176c-3.304,7.634-5.146,15.866-5.138,24.29V405.44c-0.008,8.423,1.834,16.665,5.138,24.29 c5.818,13.388,15.866,24.915,28.61,34.863c19.18,14.896,44.757,26.523,74.675,34.692C185.211,507.425,219.503,511.992,256,512 c55.632-0.046,106.07-10.546,143.848-28.383c18.888-8.958,34.691-19.751,46.309-32.712c5.792-6.472,10.52-13.534,13.833-21.176 c3.304-7.624,5.146-15.867,5.137-24.29V106.552C465.137,98.128,463.295,89.896,459.991,82.262z M436.282,405.44 c-0.009,4.293-0.889,8.478-2.768,12.843c-3.268,7.597-9.849,15.766-19.861,23.545c-14.967,11.7-37.369,22.257-64.526,29.626 c-27.158,7.388-59.054,11.709-93.128,11.7c-51.909,0.046-98.818-10.084-131.503-25.606c-16.357-7.715-29.064-16.774-37.142-25.86 c-4.066-4.538-6.989-9.058-8.868-13.406c-1.88-4.366-2.76-8.55-2.769-12.843v-49.36c16.684,15.25,40.111,27.43,68.13,36.435 c32.304,10.32,70.789,16.247,112.152,16.256c55.16-0.027,105.164-10.493,142.306-28.029c14.931-7.08,27.693-15.368,37.976-24.798 V405.44z M436.282,321.198c-2.051,4.402-4.983,8.814-8.94,13.27c-12.78,14.396-35.917,27.948-65.77,37.442 c-29.844,9.548-66.287,15.23-105.572,15.222c-52.372,0.027-99.726-10.14-133.046-25.95c-16.674-7.87-29.763-17.137-38.294-26.714 c-3.958-4.456-6.89-8.868-8.942-13.26v-64.754c16.684,15.249,40.111,27.43,68.13,36.434 c32.304,10.311,70.789,16.238,112.152,16.248c55.16-0.028,105.164-10.492,142.306-28.03c14.931-7.08,27.693-15.357,37.976-24.788 V321.198z M436.282,221.572c-2.051,4.402-4.983,8.813-8.94,13.261c-12.78,14.395-35.917,27.956-65.77,37.441 c-29.844,9.549-66.287,15.231-105.572,15.222c-52.372,0.028-99.726-10.138-133.046-25.941 c-16.674-7.87-29.763-17.146-38.294-26.722c-3.958-4.448-6.89-8.859-8.942-13.261v-64.754c16.684,15.258,40.111,27.43,68.13,36.443 c32.304,10.32,70.789,16.247,112.152,16.247c55.16-0.027,105.164-10.484,142.306-28.029c14.931-7.08,27.693-15.358,37.976-24.789 V221.572z M436.282,121.936c-2.051,4.403-4.983,8.823-8.94,13.271c-12.78,14.405-35.917,27.956-65.77,37.451 c-29.844,9.548-66.287,15.23-105.572,15.222c-52.372,0.027-99.726-10.14-133.046-25.95c-16.674-7.879-29.763-17.147-38.294-26.722 c-3.958-4.448-6.89-8.868-8.942-13.262v-15.394c0.01-4.294,0.89-8.469,2.769-12.835c3.268-7.607,9.848-15.766,19.86-23.554 c14.968-11.7,37.369-22.256,64.526-29.617c27.158-7.398,59.053-11.709,93.127-11.7c51.91-0.046,98.819,10.085,131.504,25.606 c16.356,7.706,29.054,16.765,37.142,25.86c4.066,4.538,6.988,9.05,8.868,13.406c1.878,4.366,2.758,8.541,2.768,12.835V121.936z"></path> </g> </g></svg>
+                </div>
+                <h3 class="font-bold bg-gradient-to-r from-[#bb49f0] to-[#ec3caa] bg-clip-text text-transparent text-xl">
+                    Data Science Tools
+                </h3>
+                <ul class="text-white list-disc text-sm pl-5 flex flex-col gap-2">
+                    <li class="marker:text-pink-400">Python</li>
+                    <li class="marker:text-pink-400">Pandas</li>
+                    <li class="marker:text-pink-400">Numpy</li>
+                    <li class="marker:text-pink-400">Scikit-Learn</li>
+                    <li class="marker:text-pink-400">Seaborn</li>
+                </ul>
+                <div class="absolute w-8 h-8 rounded-bl-md rounded-tr-md bg-[rgba(63,23,65,255)] top-0 right-0"></div>
+            </div>
+            <!-- Data Science End -->
+
+            <!-- Work flow start -->
+            <div class=" bg-[rgba(4,20,19,255)]  p-5 border-solid border-2 rounded-xl border-[#05382b] flex flex-col gap-2 transform hover:-translate-y-5 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#019d44] to-[#018d68]  rounded-xl text-white font-bold  text-2xl  flex justify-center items-center transform hover:-translate-y-5 transition duration-1000">
+                    <svg width="30" height="30"
+                    fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" d="M1 3a2 2 0 012-2h6.5a2 2 0 012 2v6.5a2 2 0 01-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 012-2H21a2 2 0 012 2V21a2 2 0 01-2 2h-6.5a2 2 0 01-2-2v-2.5H8.437A2.938 2.938 0 015.5 15.562V11.5H3a2 2 0 01-2-2V3zm2-.5a.5.5 0 00-.5.5v6.5a.5.5 0 00.5.5h6.5a.5.5 0 00.5-.5V3a.5.5 0 00-.5-.5H3zM14.5 14a.5.5 0 00-.5.5V21a.5.5 0 00.5.5H21a.5.5 0 00.5-.5v-6.5a.5.5 0 00-.5-.5h-6.5z"></path></g></svg>
+                </div>
+                <h3 class="font-bold bg-gradient-to-r from-[#019d44] to-[#018d68] bg-clip-text text-transparent text-xl">
+                   Development Workflow
+                </h3>
+                <ul class="text-white list-disc text-sm pl-5 flex flex-col gap-2">
+                    <li class="marker:text-green-400">Git</li>
+                    <li class="marker:text-green-400">GitHub</li>
+                    <li class="marker:text-green-400">Vs Code</li>
+                </ul>
+                <div class="absolute w-8 h-8 rounded-bl-md rounded-tr-md bg-[rgba(5,56,43,255)] top-0 right-0"></div>
+            </div>
+<!-- Work flow end -->
+        <!-- UI & Design start -->
+            <div class=" bg-[rgba(26,7,5,255)]  p-5 border-solid border-2 rounded-xl border-[#481709] flex flex-col gap-2 transform hover:-translate-y-5 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#ff6100] to-[#ff6100]  rounded-xl text-white font-bold  text-2xl  flex justify-center items-center transform hover:-translate-y-5 transition duration-1000">
+               <svg width="30" height="30"
+               viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14 12.5001C14 13.3285 13.3284 14.0001 12.5 14.0001C11.6716 14.0001 11 13.3285 11 12.5001C11 11.6717 11.6716 11.0001 12.5 11.0001C13.3284 11.0001 14 11.6717 14 12.5001Z" fill="#ffffff"></path> <path d="M16.5 10.0001C17.3284 10.0001 18 9.32854 18 8.50011C18 7.67169 17.3284 7.00011 16.5 7.00011C15.6716 7.00011 15 7.67169 15 8.50011C15 9.32854 15.6716 10.0001 16.5 10.0001Z" fill="#ffffff"></path> <path d="M13 6.50011C13 7.32854 12.3284 8.00011 11.5 8.00011C10.6716 8.00011 10 7.32854 10 6.50011C10 5.67169 10.6716 5.00011 11.5 5.00011C12.3284 5.00011 13 5.67169 13 6.50011Z" fill="#ffffff"></path> <path d="M7.50001 12.0001C8.32844 12.0001 9.00001 11.3285 9.00001 10.5001C9.00001 9.67169 8.32844 9.00011 7.50001 9.00011C6.67158 9.00011 6.00001 9.67169 6.00001 10.5001C6.00001 11.3285 6.67158 12.0001 7.50001 12.0001Z" fill="#ffffff"></path> <path d="M14 17.5001C14 18.3285 13.3284 19.0001 12.5 19.0001C11.6716 19.0001 11 18.3285 11 17.5001C11 16.6717 11.6716 16.0001 12.5 16.0001C13.3284 16.0001 14 16.6717 14 17.5001Z" fill="#ffffff"></path> <path d="M7.50001 17.0001C8.32844 17.0001 9.00001 16.3285 9.00001 15.5001C9.00001 14.6717 8.32844 14.0001 7.50001 14.0001C6.67158 14.0001 6.00001 14.6717 6.00001 15.5001C6.00001 16.3285 6.67158 17.0001 7.50001 17.0001Z" fill="#ffffff"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5017 1.02215C15.4049 0.791746 19.5636 2.32444 21.8087 5.41131C22.5084 6.37324 22.8228 7.63628 22.6489 8.83154C22.471 10.054 21.7734 11.2315 20.4472 11.8945C19.6389 12.2987 18.7731 12.9466 18.2401 13.668C17.7158 14.3778 17.6139 14.9917 17.8944 15.5529C18.4231 16.6102 18.8894 17.9257 18.8106 19.1875C18.7699 19.8375 18.5828 20.4946 18.1664 21.0799C17.7488 21.6667 17.1448 22.1192 16.3714 22.4286C14.6095 23.1333 12.6279 23.1643 10.8081 22.8207C8.98579 22.4765 7.24486 21.7421 5.92656 20.8194C4.00568 19.4748 2.47455 17.6889 1.71371 15.4464C0.9504 13.1965 0.995912 10.5851 2.06024 7.65803C3.64355 3.30372 7.56248 1.25469 11.5017 1.02215ZM11.6196 3.01868C8.26589 3.21665 5.18483 4.9176 3.93984 8.34149C3.00414 10.9148 3.01388 13.0536 3.60768 14.8038C4.20395 16.5613 5.42282 18.0255 7.07347 19.1809C8.14405 19.9303 9.6169 20.5604 11.1792 20.8554C12.7442 21.151 14.3181 21.0959 15.6286 20.5716C16.308 20.2999 16.7678 19.8099 16.8145 19.0627C16.8606 18.3245 16.5769 17.3901 16.1056 16.4473C15.3639 14.9639 15.8542 13.5318 16.6315 12.4796C17.4002 11.4391 18.5455 10.6093 19.5528 10.1057C20.2266 9.76878 20.5747 9.19623 20.6697 8.54355C20.7686 7.86365 20.5831 7.12638 20.1913 6.58769C18.4364 4.17486 15.0093 2.81858 11.6196 3.01868Z" fill="#ffffff"></path> </g></svg>
+                </div>
+                <h3 class="font-bold bg-gradient-to-r from-[#ff6100] to-[#ff6100] bg-clip-text text-transparent text-xl">
+                   Design & UI
+                </h3>
+                <ul class="text-white list-disc text-sm pl-5 flex flex-col gap-2">
+                    <li class="marker:text-orange-400">Responsive Design</li>
+                    <li class="marker:text-orange-400">Figma to Code</li>
+                    <li class="marker:text-orange-400">Interactive UI</li>
+                </ul>
+                <div class="absolute w-8 h-8 rounded-bl-md rounded-tr-md bg-[rgba(72,23,9,255)] top-0 right-0"></div>
+            </div>
+            <!-- UI&DESIGN END -->
+
+            <!-- Data Visualization Start -->
+         <div class=" bg-[rgba(16,6,28,255)]  p-5 border-solid border-2 rounded-xl border-[#28174b] flex flex-col gap-2 transform hover:-translate-y-5 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#735bff] to-[#a34aff]  rounded-xl text-white font-bold  text-2xl  flex justify-center items-center transform hover:-translate-y-5 transition duration-1000">
+            <svg width="30" height="30" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>stats [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-219.000000, -840.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M179.8,698 L181.9,698 L181.9,682 L179.8,682 L179.8,698 Z M177.7,700 L184,700 L184,680 L177.7,680 L177.7,700 Z M172.45,698 L174.55,698 L174.55,686 L172.45,686 L172.45,698 Z M170.35,700 L176.65,700 L176.65,684 L170.35,684 L170.35,700 Z M165.1,698 L167.2,698 L167.2,692 L165.1,692 L165.1,698 Z M163,700 L169.3,700 L169.3,690 L163,690 L163,700 Z" id="stats-[#ffffff]"> </path> </g> </g> </g> </g></svg>
+                </div>
+                <h3 class="font-bold bg-gradient-to-r from-[#735bff] to-[#a34aff] bg-clip-text text-transparent text-xl">
+                   Data Visualization
+                </h3>
+                <ul class="text-white list-disc text-sm pl-5 flex flex-col gap-2">
+                    <li class="marker:text-purple-500">Matplotlip</li>
+                    <li class="marker:text-purple-500">Seasborn</li>
+                    <li class="marker:text-purple-500">Plotly</li>
+                    <li class="marker:text-purple-500">D3.js</li>
+                </ul>
+                <div class="absolute w-8 h-8 rounded-bl-md rounded-tr-md bg-[rgba(40,23,75,255)] top-0 right-0"></div>
+            </div>
+            <!-- Data Visualization End -->
+            <!--Soft Skills Start -->
+         <div class=" bg-[rgba(3,16,19,255)]  p-5 border-solid border-2 rounded-xl border-[#033238] flex flex-col gap-2 transform hover:-translate-y-5 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#00bab1] to-[#0fb1bc]  rounded-xl text-white font-bold  text-2xl  flex justify-center items-center transform hover:-translate-y-5 transition duration-1000">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7086 1.53214C10.9786 1.05676 10.078 0.917375 9.27255 1.04467C8.46803 1.17183 7.62325 1.5904 7.12591 2.39445C6.9332 2.70601 6.81024 3.04646 6.7559 3.40767C5.97312 3.35525 5.18086 3.59264 4.58547 4.08919C3.98255 4.59201 3.59741 5.34432 3.59741 6.25684C3.59741 6.55614 3.63851 6.86315 3.72008 7.17654C3.42298 7.23942 3.13697 7.34918 2.86932 7.50027C1.98542 7.99927 1.36438 8.90663 1.11913 9.88841C0.869371 10.8882 0.989124 12.0467 1.70052 13.0391C2.0609 13.5419 2.54903 13.9691 3.1623 14.305C3.01053 14.5081 2.88229 14.7271 2.77811 14.9565C2.35249 15.8935 2.32044 17.0038 2.64559 17.98C2.97535 18.9701 3.69756 19.8871 4.83624 20.3254C5.57833 20.6111 6.42615 20.6665 7.35551 20.4749C7.39798 20.9494 7.52745 21.3806 7.74983 21.7577C8.22598 22.5651 9.0236 22.9458 9.80541 22.9947C10.5523 23.0414 11.3758 22.778 12 22.2458C12.6242 22.778 13.4477 23.0414 14.1946 22.9947C14.9764 22.9458 15.774 22.5651 16.2502 21.7577C16.4725 21.3806 16.602 20.9494 16.6445 20.4749C17.5738 20.6665 18.4217 20.6111 19.1638 20.3254C20.3024 19.8871 21.0246 18.9701 21.3544 17.98C21.6796 17.0038 21.6475 15.8935 21.2219 14.9565C21.1177 14.7271 20.9895 14.5081 20.8377 14.305C21.451 13.9691 21.9391 13.5419 22.2995 13.0391C23.0109 12.0467 23.1306 10.8882 22.8809 9.88841C22.6356 8.90663 22.0146 7.99927 21.1307 7.50027C20.863 7.34918 20.577 7.23942 20.2799 7.17654C20.3615 6.86315 20.4026 6.55614 20.4026 6.25684C20.4026 5.34432 20.0175 4.59201 19.4145 4.08919C18.8191 3.59264 18.0269 3.35525 17.2441 3.40767C17.1898 3.04646 17.0668 2.70601 16.8741 2.39445C16.3767 1.5904 15.532 1.17183 14.7274 1.04467C13.922 0.917375 13.0214 1.05676 12.2914 1.53214C11.9861 1.73097 12.0139 1.73097 11.7086 1.53214ZM13.0033 20.0518L13.0033 17.5288C13.0045 17.0494 13.1133 16.3457 13.3939 15.7998C13.6573 15.2872 13.9946 15.0268 14.5082 15.0268C15.0623 15.0268 15.5115 14.5773 15.5115 14.0227C15.5115 13.4682 15.0623 13.0186 14.5082 13.0186C13.9202 13.0186 13.4216 13.16 13.0033 13.3894V12.5084C13.0045 12.029 13.1133 11.3254 13.3939 10.7794C13.6573 10.2668 13.9946 10.0064 14.5082 10.0064C15.0623 10.0064 15.5115 9.55688 15.5115 9.00234C15.5115 8.4478 15.0623 7.99826 14.5082 7.99826C13.9202 7.99826 13.4216 8.13957 13.0033 8.36902L13.0033 3.97532C13.005 3.57853 13.1671 3.35779 13.3859 3.21528C13.6436 3.04746 14.0284 2.96723 14.4144 3.02824C14.8013 3.08939 15.0539 3.26704 15.1679 3.45142C15.2603 3.60078 15.3726 3.9329 15.091 4.59054C14.9015 5.03294 15.0524 5.54766 15.4507 5.8175C15.849 6.08734 16.3825 6.03639 16.7226 5.69604C17.0903 5.32811 17.7563 5.32032 18.1299 5.63189C18.2795 5.75662 18.396 5.94564 18.396 6.25684C18.396 6.59422 18.2548 7.14633 17.705 7.91672C17.4235 8.31116 17.4637 8.85055 17.8006 9.19878C18.1375 9.54701 18.6749 9.60465 19.0779 9.33577C19.5101 9.04741 19.8566 9.08664 20.1448 9.24934C20.4837 9.44063 20.8032 9.85112 20.9342 10.3755C21.0607 10.8818 20.9923 11.4176 20.669 11.8686C20.3466 12.3184 19.6765 12.8121 18.3565 13.0323C17.8683 13.1137 17.5124 13.5392 17.5182 14.0344C17.5239 14.5296 17.8896 14.9467 18.3795 15.0167C18.8812 15.0884 19.207 15.3732 19.3952 15.7874C19.5966 16.231 19.6273 16.8151 19.4508 17.345C19.2789 17.861 18.9351 18.2619 18.4434 18.4511C17.9498 18.6411 17.1399 18.6809 15.9267 18.129C15.5761 17.9695 15.1653 18.025 14.8694 18.2716C14.5735 18.5183 14.4448 18.9127 14.5382 19.2866C14.6621 19.7827 14.8668 20.9406 14.0694 20.9905C13.5184 21.0249 13.0062 20.6055 13.0033 20.0518ZM10.9967 3.97532C10.995 3.57853 10.8329 3.35779 10.6141 3.21528C10.3564 3.04746 9.97157 2.96723 9.58558 3.02824C9.19869 3.08939 8.94611 3.26704 8.83207 3.45142C8.73968 3.60078 8.62739 3.9329 8.90901 4.59054C9.09846 5.03294 8.94757 5.54766 8.54931 5.8175C8.15105 6.08734 7.61747 6.03639 7.27739 5.69604C6.90975 5.32811 6.24365 5.32032 5.87006 5.63189C5.72051 5.75662 5.604 5.94564 5.604 6.25684C5.604 6.59422 5.74515 7.14633 6.29501 7.91672C6.57653 8.31116 6.53629 8.85055 6.19937 9.19878C5.86246 9.54701 5.32505 9.60465 4.92206 9.33577C4.48987 9.04741 4.1434 9.08664 3.8552 9.24934C3.51634 9.44063 3.19679 9.85112 3.06581 10.3755C2.93933 10.8818 3.0077 11.4176 3.33095 11.8686C3.65342 12.3184 4.32349 12.8121 5.64353 13.0323C6.13166 13.1137 6.48757 13.5392 6.48182 14.0344C6.47607 14.5296 6.11037 14.9467 5.62048 15.0167C5.1188 15.0884 4.793 15.3732 4.60484 15.7874C4.40339 16.231 4.37273 16.8151 4.54922 17.345C4.7211 17.861 5.06489 18.2619 5.55656 18.4511C6.05021 18.6411 6.86015 18.6809 8.0733 18.129C8.42388 17.9695 8.83474 18.025 9.13063 18.2716C9.42652 18.5183 9.5552 18.9127 9.4618 19.2866C9.33788 19.7827 9.13324 20.9406 9.93058 20.9905C10.4816 21.0249 10.9938 20.6055 10.9967 20.0518L10.9967 20.0472V17.5292C10.9955 17.0498 10.8868 16.3459 10.6061 15.7998C10.3427 15.2872 10.0054 15.0268 9.49176 15.0268C8.93765 15.0268 8.48846 14.5773 8.48846 14.0227C8.48846 13.4682 8.93765 13.0186 9.49176 13.0186C10.0798 13.0186 10.5784 13.16 10.9967 13.3894V12.5088C10.9955 12.0294 10.8868 11.3255 10.6061 10.7794C10.3427 10.2668 10.0054 10.0064 9.49176 10.0064C8.93765 10.0064 8.48846 9.55688 8.48846 9.00234C8.48846 8.4478 8.93765 7.99826 9.49176 7.99826C10.0798 7.99826 10.5784 8.13957 10.9967 8.36902L10.9967 3.97532Z" fill="#ffffff"></path> </g></svg>
+                </div>
+                <h3 class="font-bold bg-gradient-to-r from-[#00bab1] to-[#0fb1bc] bg-clip-text text-transparent text-xl">
+                   Soft Skills
+                </h3>
+                <ul class="text-white list-disc text-sm pl-5 flex flex-col gap-2">
+                    <li class="marker:text-cyan-500">Active Listener</li>
+                    <li class="marker:text-cyan-500">Problem Solving</li>
+                    <li class="marker:text-cyan-500">Fast Leaner</li>
+                    <li class="marker:text-cyan-500">Dealdline Mangement</li>
+                    <li class="marker:text-cyan-500">Analytical Thinking</li>
+                </ul>
+                <div class="absolute w-8 h-8 rounded-bl-md rounded-tr-md bg-[rgba(3,50,56,255)] top-0 right-0"></div>
+            </div>
+            <!-- Soft skills End -->
+        </div>
+        <!-- Skills End -->
+        <div class=" mt-5  bg-gradient-to-r from-[rgba(29,40,55,255)] to-[rgba(16,24,40,255)] w-70 text-center p-1 border-1 border-solid border-[#344454]  rounded-2xl ">
+            <p>Currently Learning:  
+                <span class="text-blue-500 relative ml-2 animate-pulse
+                after:content-[' '] after:h-2 after:w-2 after:rounded-full after:bg-blue-500 after:absolute after:left-[-12px] after:top-2 ">   React.js</span></p></div>
+    </section>
+    <!--Skills Section End -->
+
+    <!-- Projects Sections Start -->
+     <section id="projects" class="flex flex-col items-center  max-sm:w-[130vw]">
+        <h2 class="text-center text-5xl text-white relative pt-5
+        after:content-[' '] after:w-15 after:h-1 after:bg-gradient-to-r after:from-[#4277ff] after-[#735aff] after:to-[#9227fb]
+        after:top-full after:left-[50%] after:absolute mb-10">Featured Projects</h2>
+        <p class="text-center text-xl">A curated showcase of my projects in Frontend Development and Data Science.</p>
+        <div id="filters" class="h-20 flex justify-center gap-3 items-center max-md:text-[16px] max-sm:text-[10px]">
+            <button data-filter="All" class="filter-btn px-4 h-10 rounded-3xl border-1 border-solid border-[#344454] text-white hover:text-[#4388d6] hover:border-[#4388d6] hover:bg-[rgba(67,136,214,0.2)] transition duration-1000 cursor-pointer">All</button>
+            <button data-filter="Frontend" class="filter-btn px-4 h-10 rounded-3xl border-1 border-solid border-[#344454] text-white hover:text-[#4388d6] hover:border-[#4388d6] hover:bg-[rgba(67,136,214,0.2)] transition duration-1000 cursor-pointer">Frontend</button>
+            <button data-filter="Data Science" class="filter-btn px-4 h-10 rounded-3xl border-1 border-solid border-[#344454] text-white hover:text-[#4388d6] hover:border-[#4388d6] hover:bg-[rgba(67,136,214,0.2)] transition duration-1000 cursor-pointer">Data Science</button>
+            <button data-filter="Merged" class="filter-btn px-4 h-10 rounded-3xl border-1 border-solid border-[#344454] text-white hover:text-[#4388d6] hover:border-[#4388d6] hover:bg-[rgba(67,136,214,0.2)] transition duration-1000 cursor-pointer">Merged</button>
+        </div>
+
+        <!-- Project Showcase Container -->
+        <div id="project-container" class="space-y-6 p-10 max-sm:pr-2 max-sm:pl-2"></div>
+
+        <!-- Work together -->
+         <div class="w-[85%] border-solid border-2 border-[#344454] rounded-xl p-5 flex flex-col items-center gap-5 bg-gradient-to-b from-[rgba(16,5,28,1)] from-[5%] to-[#010102] to-[90%]  mb-10">
+            <h3 class="text-center text-[32px] text-white text-bold">
+                Interested in Working Together?
+            </h3>
+            <p class="text-center w-[60%]">
+                I'm always excited to take on new challenges and create innovative solutions. Let's discuss how I can help bring your project to life!
+            </p>
+              <div class=" flex gap-5 max-sm:flex-col ">
+                <button id="githubButton" class="bg-gradient-to-r from-[#4277ff] via-[#735aff] to-[#9227fb]
+                w-50 h-12 rounded-[10px] text-white  cursor-pointer
+                active:opacity-[0.5]  transform hover:scale-110 transition duration-300">
+                View More on GitHub
+            </button>
+                <button 
+                class="contact  w-37 h-12 rounded-[10px] text-white border-solid border-1 border-[#3c4650] cursor-pointer
+                hover:border-[#4388d6]  hover:bg-[rgba(67,136,214,0.2)] transition duration-300">Let's Collaborate</button>
+            </div>
+         </div>
+     </section>
+    <!-- Projects Sections End -->
+
+    <!-- Experiance & Education  Section start-->
+    <section id="experiance" class="flex flex-col items-center  max-sm:w-[130vw]">
+        <h2 class="text-center text-5xl text-white relative pt-5
+        after:content-[' '] after:w-15 after:h-1 after:bg-gradient-to-r after:from-[#4277ff] after-[#735aff] after:to-[#9227fb]
+        after:top-full after:left-[50%] after:absolute mb-10">Experience & Education</h2>
+        <p class="text-center">Building expertise through hands-on experience and continuous learning</p>
+         <div class="pr-20 pl-20 w-full mt-5 flex flex-col gap-5 max-sm:pr-5 max-sm:pl-5 max-sm:gap-5">
+            <!-- MAIM DIV START -->
+            <div
+     class="p-10  bg-[rgba(5,16,28,255)] p-5 border-solid border-2 rounded-xl border-[#0e294f] flex gap-10  hover:bg-[rgba(67,136,214,0.2)] transition duration-1000 max-sm:flex-col max-md:flex-col  max-sm:gap-5">
+     <div class=" flex flex-col gap-2">
+        <div class="w-12 h-12 bg-gradient-to-r from-[#2584ff] to-[#15a9ef]  rounded-xl text-white font-bold  text-2xl  flex justify-center items-center transform hover:-translate-y-5 transition duration-1000">
+          <svg fill="#ffffff" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M488.727,100.848H372.364V31.03c0-12.853-10.42-23.273-23.273-23.273H162.909c-12.853,0-23.273,10.42-23.273,23.273 v69.818H23.273C10.42,100.848,0,111.268,0,124.121v170.667c0,11.247,8.045,20.885,19.11,22.897l11.92,2.166V480.97 c0,12.853,10.42,23.273,23.273,23.273h403.394c12.853,0,23.273-10.42,23.273-23.273V319.851l11.922-2.166 c11.064-2.012,19.108-11.65,19.108-22.897V124.121C512,111.268,501.58,100.848,488.727,100.848z M186.182,54.303h139.636v46.545 H186.182V54.303z M434.424,457.697H77.576V328.315l93.091,16.925v27.124c0,12.853,10.42,23.273,23.273,23.273h124.121 c12.853,0,23.273-10.42,23.273-23.273v-27.122l93.091-16.925V457.697z M217.212,349.091v-46.545h77.576v46.545H217.212z M465.455,275.364l-124.121,22.568v-18.66c0-12.853-10.42-23.273-23.273-23.273H193.939c-12.853,0-23.273,10.42-23.273,23.273 v18.66L46.545,275.364V147.394h116.364h186.182h116.364V275.364z"></path> </g> </g> </g></svg>
+        </div>
+        <p class="text-[10px] flex gap-1">
+              <svg  width="20px" height="20px"
+          fill="#8d9094" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#8d9094"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z"></path></g></svg>
+             July 1st, 2025 - Sep 5th, 2025
+        </p>
+
+        <p class="text-[10px] flex gap-1">
+               <svg width="20px" height="20px"
+       viewBox="-4 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8d9094" stroke="#8d9094"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>location</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-104.000000, -411.000000)" fill="#8d9094"> <path d="M116,426 C114.343,426 113,424.657 113,423 C113,421.343 114.343,420 116,420 C117.657,420 119,421.343 119,423 C119,424.657 117.657,426 116,426 L116,426 Z M116,418 C113.239,418 111,420.238 111,423 C111,425.762 113.239,428 116,428 C118.761,428 121,425.762 121,423 C121,420.238 118.761,418 116,418 L116,418 Z M116,440 C114.337,440.009 106,427.181 106,423 C106,417.478 110.477,413 116,413 C121.523,413 126,417.478 126,423 C126,427.125 117.637,440.009 116,440 L116,440 Z M116,411 C109.373,411 104,416.373 104,423 C104,428.018 114.005,443.011 116,443 C117.964,443.011 128,427.95 128,423 C128,416.373 122.627,411 116,411 L116,411 Z" id="location" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+             Remote
+        </p>
+     </div>
+
+    <div class="flex flex-col gap-5">
+        <div> <h3 class="font-bold bg-gradient-to-r from-[#2584ff] to-[#15a9ef] bg-clip-text text-transparent text-xl">
+                    Data Science Internship
+                </h3>
+                <p class="text-white">MAIM-Digital Solutions</p></div>
+                <p>Completed a comprehensive training in data science, covering:</p>
+                <ul class="text-white list-disc text-sm pl-5 flex flex-col gap-2">
+                    <li class="marker:text-blue-400">Data preparation - Data types, collection methods, cleaning, transfomation </li>
+                    <li class="marker:text-blue-400">Analysis & Visualization - EDA, data visualization techniques, and tools</li>
+                    <li class="marker:text-blue-400">Machine Learning - Supervised & unsupervised, model evaluation, practical ML use cases</li>
+                </ul>
+    </div>
+     </div>
+      <!-- MAIM DIV END -->
+
+     <!-- Depi DIV START -->
+    <div class="bg-[rgba(4,20,19,255)]  p-5 border-solid border-2 rounded-xl border-[#05382b] flex gap-10  hover:bg-[#05382b] transition duration-1000 relative max-sm:flex-col max-md:flex-col  max-sm:gap-5
+    ">
+<div class=" flex flex-col gap-2">
+     <div class="w-12 h-12 bg-gradient-to-r from-[#019d44] to-[#018d68]  rounded-xl text-white font-bold  text-2xl  flex justify-center items-center transform hover:-translate-y-5 transition duration-1000">
+              <svg width="40px" height="40px"
+              version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polyline fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" points="17.4,21 21.3,26.9 22.7,23.6 26.3,23.6 22.6,18 "></polyline> <polyline fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" points="14.6,21 10.7,26.9 9.3,23.6 5.7,23.6 9.4,18 "></polyline> <path fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" d="M17.2,4.4L19,5.7L21.2,6c0.9,0.1,1.6,0.8,1.7,1.7 l0.4,2.2l1.3,1.8c0.5,0.7,0.5,1.7,0,2.5L23.3,16L23,18.2c-0.1,0.9-0.8,1.6-1.7,1.7L19,20.3l-1.8,1.3c-0.7,0.5-1.7,0.5-2.5,0L13,20.3 L10.8,20c-0.9-0.1-1.6-0.8-1.7-1.7L8.7,16l-1.3-1.8c-0.5-0.7-0.5-1.7,0-2.5L8.7,10L9,7.8C9.2,6.9,9.9,6.2,10.8,6L13,5.7l1.8-1.3 C15.5,3.9,16.5,3.9,17.2,4.4z"></path> </g></svg>
+            </div>
+    <p class="text-[10px] flex gap-1">
+                  <svg  width="20px" height="20px"
+          fill="#8d9094" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#8d9094"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z"></path></g></svg>
+         June 27th, 2025 - Jan 1st, 2025
+    </p>
+
+    <p class="text-[10px] flex gap-1">
+       <svg width="20px" height="20px"
+       viewBox="-4 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8d9094" stroke="#8d9094"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>location</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-104.000000, -411.000000)" fill="#8d9094"> <path d="M116,426 C114.343,426 113,424.657 113,423 C113,421.343 114.343,420 116,420 C117.657,420 119,421.343 119,423 C119,424.657 117.657,426 116,426 L116,426 Z M116,418 C113.239,418 111,420.238 111,423 C111,425.762 113.239,428 116,428 C118.761,428 121,425.762 121,423 C121,420.238 118.761,418 116,418 L116,418 Z M116,440 C114.337,440.009 106,427.181 106,423 C106,417.478 110.477,413 116,413 C121.523,413 126,417.478 126,423 C126,427.125 117.637,440.009 116,440 L116,440 Z M116,411 C109.373,411 104,416.373 104,423 C104,428.018 114.005,443.011 116,443 C117.964,443.011 128,427.95 128,423 C128,416.373 122.627,411 116,411 L116,411 Z" id="location" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+        Online
+    </p>
+ </div>
+<div class="flex flex-col gap-5">
+     <div> <h3 class="font-bold bg-gradient-to-r from-[#019d44] to-[#018d68] bg-clip-text text-transparent text-xl">
+               React Frontend Developer Diploma
+            </h3>
+        <p class="text-white">
+            Digital Egypt Pioneer Initiative (Depi)
+        </p>
+        </div>
+
+        <p>Comperhensive web development track focusing on React applications:</p>
+
+            <ul class="text-white list-disc text-sm pl-5 flex flex-col gap-2">
+                <li class="marker:text-green-400">React Apllication Development</li>
+                <li class="marker:text-green-400">Git and GitHub for Version Control</li>
+                <li class="marker:text-green-400">NodeJS for Server-side Scripting</li>
+                <li class="marker:text-green-400">Docker and Kubernetes ContainerZation</li>
+                <li class="marker:text-green-400">Real-world Capstone Project </li>
+            </ul></div>
+</div>
+       <!-- DEPI DIV END -->
+         </div>
+
+          <div class="w-90 h-10 mt-5 bg-gradient-to-r from-[rgba(29,40,55,255)] to-[rgba(16,24,40,255)] w-70 text-center p-1 border-1 border-solid border-[#344454]  rounded-full  flex justify-center items-center gap-2 mb-10 amx-sm:w-20">
+            <div class=" animate-pulse
+                 h-3 w-3 rounded-full bg-green-500 "></div>
+            <p  class="text-white text-[16px]">Currently available for freelance projects </p></div>
+    </section>
+    <!-- Experiance   Section End-->
+
+    <!--Contact Section Start-->
+        <section id="contact" class="flex flex-col gap-2 items-center  bg-gradient-to-b from-[#000] to-[rgba(16,5,28,1)]  max-sm:w-[130vw]">
+              <h2 class="text-center text-5xl text-white relative pt-5
+        after:content-[' '] after:w-15 after:h-1 after:bg-gradient-to-r after:from-[#4277ff] after-[#735aff] after:to-[#9227fb]
+        after:top-full after:left-[50%] after:absolute mb-10">Let's Work Together</h2>
+        <p class="text-center w-150 ">Ready to create something amazing? I'm available for freelance projects and always excited to take on new challenges.</p>
+        
+       <div class="grid grid-cols-4 gap-5 p-10 max-md:grid-cols-2 max-sm:grid-cols-1">
+         <div class=" bg-[rgba(5,16,28,255)] flex flex-col gap-2 rounded-xl p-5 relative border-1 border-solid border-[#0e294f] transform hover:scale-110 transition duration-1000">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#2584ff] to-[#15a9ef]  rounded-xl flex justify-center itmes-center">
+                 <svg width="30px"
+                 viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <rect x="3" y="5" width="18" height="14" rx="2" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></rect> </g></svg>
+                </div>
+                <h3 class="text-2xl bg-gradient-to-r from-[#2584ff] to-[#15a9ef] bg-clip-text text-transparent text-bold ">Email</h3>
+                <p>Let's discuss your project</p>
+                <a href="mailto:rudainaaly154@gmail.com?subject=Hello Rudaina&body=I saw your site!" class="flex gap-1 text-white hover:underline">Send Email <svg width="20px"
+                     viewBox="0 0 20.00 20.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" transform="rotate(45)" stroke="#8d9094"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>navigation / 7 - navigation, arrow, arrows, direction, up icon</title> <g id="Free-Icons" stroke-width="0.8400000000000001" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g transform="translate(-1193.000000, -674.000000)" id="Group" stroke="#8d9094" stroke-width="0.8400000000000001"> <g transform="translate(1189.000000, 672.000000)" id="Shape"> <path d="M13,5 L21,12 L13,19 M21,12 L3.00497942,12" transform="translate(12.002490, 12.000000) rotate(-90.000000) translate(-12.002490, -12.000000) "> </path> </g> </g> </g> </g></svg>
+                     </a>
+                     <div class="absolute w-5 h-5 rounded-bl-4xl rounded-tr-xl bg-[rgba(14,41,79,255)] top-0 right-0"></div>
+                    </div>
+
+            <div class="bg-[rgba(4,20,19,255)] flex flex-col gap-2 rounded-xl p-5 relative border-1 border-solid border-[#05382b] hover:scale-110 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#019d44] to-[#018d68]  rounded-xl flex flex-col justify-center items-center">
+                    <svg width="30px"
+                    fill="#ffff" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="#ffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M24.75 17.542c-1.469 0-2.849-0.62-4.099-1.635l0.302-1.432 0.010-0.057c0.276-1.521 1.13-4.078 3.786-4.078 1.99 0 3.604 1.615 3.604 3.604 0 1.984-1.615 3.599-3.604 3.599zM24.75 6.693c-3.385 0-6.016 2.198-7.083 5.818-1.625-2.443-2.865-5.38-3.583-7.854h-3.646v9.484c-0.005 1.875-1.521 3.391-3.396 3.396-1.875-0.005-3.391-1.526-3.396-3.396v-9.484h-3.646v9.484c0 3.885 3.161 7.068 7.042 7.068 3.885 0 7.042-3.182 7.042-7.068v-1.589c0.708 1.474 1.578 2.974 2.635 4.297l-2.234 10.495h3.729l1.62-7.615c1.417 0.906 3.047 1.479 4.917 1.479 4 0 7.25-3.271 7.25-7.266 0-4-3.25-7.25-7.25-7.25z"></path> </g></svg>
+                </div>
+                <h3 class="text-2xl bg-gradient-to-r from-[#019d44] to-[#018d68] bg-clip-text text-transparent text-bold">Upwork</h3>
+                <p>Hire me on upwork</p>
+                <a class="text-white flex gap-1 hover:underline"
+                href="https://www.upwork.com/freelancers/~01586ba7cd9eb9af1d?mp_source=share">
+                    View profile 
+                    <svg width="20px"
+                     viewBox="0 0 20.00 20.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" transform="rotate(45)" stroke="#8d9094"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>navigation / 7 - navigation, arrow, arrows, direction, up icon</title> <g id="Free-Icons" stroke-width="0.8400000000000001" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g transform="translate(-1193.000000, -674.000000)" id="Group" stroke="#8d9094" stroke-width="0.8400000000000001"> <g transform="translate(1189.000000, 672.000000)" id="Shape"> <path d="M13,5 L21,12 L13,19 M21,12 L3.00497942,12" transform="translate(12.002490, 12.000000) rotate(-90.000000) translate(-12.002490, -12.000000) "> </path> </g> </g> </g> </g></svg>
+                 </a>
+                <div class="absolute w-5 h-5 rounded-bl-4xl rounded-tr-xl bg-[rgba(2,52,38,255)] top-0 right-0"></div>
+            </div>
+
+            <div class="bg-[rgba(5,7,11,255)] flex flex-col gap-2 rounded-xl p-5 relative border-1 border-solid border-[#151a1f] hover:scale-110 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#616a7a] to-[#4b5666]  rounded-xl flex flex-col justify-center items-center ">
+                    <svg  width="30px"
+                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.1007 13.359L15.5719 12.8272H15.5719L16.1007 13.359ZM16.5562 12.9062L17.085 13.438H17.085L16.5562 12.9062ZM18.9728 12.5894L18.6146 13.2483L18.9728 12.5894ZM20.8833 13.628L20.5251 14.2869L20.8833 13.628ZM21.4217 16.883L21.9505 17.4148L21.4217 16.883ZM20.0011 18.2954L19.4723 17.7636L20.0011 18.2954ZM18.6763 18.9651L18.7459 19.7119H18.7459L18.6763 18.9651ZM8.81536 14.7266L9.34418 14.1947L8.81536 14.7266ZM4.00289 5.74561L3.2541 5.78816L3.2541 5.78816L4.00289 5.74561ZM10.4775 7.19738L11.0063 7.72922H11.0063L10.4775 7.19738ZM10.6342 4.54348L11.2346 4.09401L10.6342 4.54348ZM9.37326 2.85908L8.77286 3.30855V3.30855L9.37326 2.85908ZM6.26145 2.57483L6.79027 3.10667H6.79027L6.26145 2.57483ZM4.69185 4.13552L4.16303 3.60368H4.16303L4.69185 4.13552ZM12.0631 11.4972L12.5919 10.9654L12.0631 11.4972ZM16.6295 13.8909L17.085 13.438L16.0273 12.3743L15.5719 12.8272L16.6295 13.8909ZM18.6146 13.2483L20.5251 14.2869L21.2415 12.9691L19.331 11.9305L18.6146 13.2483ZM20.8929 16.3511L19.4723 17.7636L20.5299 18.8273L21.9505 17.4148L20.8929 16.3511ZM18.6067 18.2184C17.1568 18.3535 13.4056 18.2331 9.34418 14.1947L8.28654 15.2584C12.7186 19.6653 16.9369 19.8805 18.7459 19.7119L18.6067 18.2184ZM9.34418 14.1947C5.4728 10.3453 4.83151 7.10765 4.75168 5.70305L3.2541 5.78816C3.35456 7.55599 4.14863 11.144 8.28654 15.2584L9.34418 14.1947ZM10.7195 8.01441L11.0063 7.72922L9.9487 6.66555L9.66189 6.95073L10.7195 8.01441ZM11.2346 4.09401L9.97365 2.40961L8.77286 3.30855L10.0338 4.99296L11.2346 4.09401ZM5.73263 2.04299L4.16303 3.60368L5.22067 4.66736L6.79027 3.10667L5.73263 2.04299ZM10.1907 7.48257C9.66189 6.95073 9.66117 6.95144 9.66045 6.95216C9.66021 6.9524 9.65949 6.95313 9.659 6.95362C9.65802 6.95461 9.65702 6.95561 9.65601 6.95664C9.65398 6.95871 9.65188 6.96086 9.64972 6.9631C9.64539 6.96759 9.64081 6.97245 9.63599 6.97769C9.62634 6.98816 9.61575 7.00014 9.60441 7.01367C9.58174 7.04072 9.55605 7.07403 9.52905 7.11388C9.47492 7.19377 9.41594 7.2994 9.36589 7.43224C9.26376 7.70329 9.20901 8.0606 9.27765 8.50305C9.41189 9.36833 10.0078 10.5113 11.5343 12.0291L12.5919 10.9654C11.1634 9.54499 10.8231 8.68059 10.7599 8.27309C10.7298 8.07916 10.761 7.98371 10.7696 7.96111C10.7748 7.94713 10.7773 7.9457 10.7709 7.95525C10.7677 7.95992 10.7624 7.96723 10.7541 7.97708C10.75 7.98201 10.7451 7.98759 10.7394 7.99381C10.7365 7.99692 10.7335 8.00019 10.7301 8.00362C10.7285 8.00534 10.7268 8.00709 10.725 8.00889C10.7241 8.00979 10.7232 8.0107 10.7223 8.01162C10.7219 8.01208 10.7212 8.01278 10.7209 8.01301C10.7202 8.01371 10.7195 8.01441 10.1907 7.48257ZM11.5343 12.0291C13.0613 13.5474 14.2096 14.1383 15.0763 14.2713C15.5192 14.3392 15.8763 14.285 16.1472 14.1841C16.28 14.1346 16.3858 14.0763 16.4658 14.0227C16.5058 13.9959 16.5392 13.9704 16.5663 13.9479C16.5799 13.9367 16.5919 13.9262 16.6024 13.9166C16.6077 13.9118 16.6126 13.9073 16.6171 13.903C16.6194 13.9008 16.6215 13.8987 16.6236 13.8967C16.6246 13.8957 16.6256 13.8947 16.6266 13.8937C16.6271 13.8932 16.6279 13.8925 16.6281 13.8923C16.6288 13.8916 16.6295 13.8909 16.1007 13.359C15.5719 12.8272 15.5726 12.8265 15.5733 12.8258C15.5735 12.8256 15.5742 12.8249 15.5747 12.8244C15.5756 12.8235 15.5765 12.8226 15.5774 12.8217C15.5793 12.82 15.581 12.8183 15.5827 12.8166C15.5862 12.8133 15.5895 12.8103 15.5926 12.8074C15.5988 12.8018 15.6044 12.7969 15.6094 12.7929C15.6192 12.7847 15.6265 12.7795 15.631 12.7764C15.6403 12.7702 15.6384 12.773 15.6236 12.7785C15.5991 12.7876 15.501 12.8189 15.3038 12.7886C14.8905 12.7253 14.02 12.3853 12.5919 10.9654L11.5343 12.0291ZM9.97365 2.40961C8.95434 1.04802 6.94996 0.83257 5.73263 2.04299L6.79027 3.10667C7.32195 2.578 8.26623 2.63181 8.77286 3.30855L9.97365 2.40961ZM4.75168 5.70305C4.73201 5.35694 4.89075 4.9954 5.22067 4.66736L4.16303 3.60368C3.62571 4.13795 3.20329 4.89425 3.2541 5.78816L4.75168 5.70305ZM19.4723 17.7636C19.1975 18.0369 18.9029 18.1908 18.6067 18.2184L18.7459 19.7119C19.4805 19.6434 20.0824 19.2723 20.5299 18.8273L19.4723 17.7636ZM11.0063 7.72922C11.9908 6.7503 12.064 5.2019 11.2346 4.09401L10.0338 4.99295C10.4373 5.53193 10.3773 6.23938 9.9487 6.66555L11.0063 7.72922ZM20.5251 14.2869C21.3429 14.7315 21.4703 15.7769 20.8929 16.3511L21.9505 17.4148C23.2908 16.0821 22.8775 13.8584 21.2415 12.9691L20.5251 14.2869ZM17.085 13.438C17.469 13.0562 18.0871 12.9616 18.6146 13.2483L19.331 11.9305C18.2474 11.3414 16.9026 11.5041 16.0273 12.3743L17.085 13.438Z" fill="#ffffff"></path> </g></svg>
+                </div>
+                <h3 class="bg-gradient-to-r from-[#616a7a] to-[#4b5666] bg-clip-text text-transparent text-2xl"
+                >What's up</h3>
+                <p>Text me about your project</p>
+                <a  class="flex gap-1 text-white hover:underline"
+                href="https://wa.me/201287028568?text=Hey Rudaina, I saw your portfolio!">
+                Text Me 
+                <svg width="20px"
+                     viewBox="0 0 20.00 20.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" transform="rotate(45)" stroke="#8d9094"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>navigation / 7 - navigation, arrow, arrows, direction, up icon</title> <g id="Free-Icons" stroke-width="0.8400000000000001" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g transform="translate(-1193.000000, -674.000000)" id="Group" stroke="#8d9094" stroke-width="0.8400000000000001"> <g transform="translate(1189.000000, 672.000000)" id="Shape"> <path d="M13,5 L21,12 L13,19 M21,12 L3.00497942,12" transform="translate(12.002490, 12.000000) rotate(-90.000000) translate(-12.002490, -12.000000) "> </path> </g> </g> </g> </g></svg>
+                 </a>
+                 <div class="absolute w-5 h-5 rounded-bl-4xl rounded-tr-xl bg-[rgba(21,25,31,255)] top-0 right-0"></div>
+            </div>
+
+            <div class="bg-[rgba(6,13,37,255)] flex flex-col gap-2 rounded-xl p-5 relative border-1 border-solid border-[#081a4a] hover:scale-110 transition duration-1000 relative">
+                <div class="w-12 h-12 bg-gradient-to-r from-[#1459f8] to-[#1348e7]  rounded-xl flex flex-col justify-center items-center">
+                   <svg width="30px"
+                   viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 22V15C18 13.8954 17.1046 13 16 13C14.8954 13 14 13.8954 14 15V22H10" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10 22V15C10 11.6863 12.6863 9 16 9C19.3137 9 22 11.6863 22 15V22H18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <rect x="3" y="9" width="4" height="13" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect> <circle cx="5" cy="4" r="2" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle> </g></svg>
+                </div>
+                <h3 class="text-2xl bg-gradient-to-r from-[#1459f8] to-[#1348e7]  bg-clip-text text-transparent">
+                    linkedIn
+                </h3>
+                <p>Connect Professionally</p>
+                <a  class="flex gap-1 text-white hover:underline"
+                href="https://www.linkedin.com/in/rudaina-aly-6a3879312/">
+            Connect
+         <svg width="20px"
+                     viewBox="0 0 20.00 20.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" transform="rotate(45)" stroke="#8d9094"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>navigation / 7 - navigation, arrow, arrows, direction, up icon</title> <g id="Free-Icons" stroke-width="0.8400000000000001" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g transform="translate(-1193.000000, -674.000000)" id="Group" stroke="#8d9094" stroke-width="0.8400000000000001"> <g transform="translate(1189.000000, 672.000000)" id="Shape"> <path d="M13,5 L21,12 L13,19 M21,12 L3.00497942,12" transform="translate(12.002490, 12.000000) rotate(-90.000000) translate(-12.002490, -12.000000) "> </path> </g> </g> </g> </g></svg>
+        </a>
+             <div class="absolute w-5 h-5 rounded-bl-4xl rounded-tr-xl bg-[rgba(8,26,74,255)] top-0 right-0"></div>
+            </div>
+       </section>
+        <!--Contact Section End-->
+
+        <!-- Footer Start -->
+            <footer class="flex flex-col justify-center items-center h-50  max-sm:w-[130vw]">
+                <h2 class="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                    Rud</h2>
+                <div class="flex flex-row gap-5 items-center">
+<div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+<p>Available for freelance projects</p>
+<div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+            </footer>
+   <!-- Footer end -->
+     <script src="script.js"></script>
+  </body>
+</html>
