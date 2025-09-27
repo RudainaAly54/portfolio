@@ -61,10 +61,11 @@
       "github": null,
       "live": null,
       "status": "in progress",
-      "tech": ["HTML", "React", "JavaScript", "D3.js"],
+      "tech": ["HTML", "React", "JavaScript", "Chart.js"],
       "field": "Merged",
       "img": "images/merged",
       "description": "Interactive dashboard app in progress using React and D3.js. Designed to make student performance data accessible through dynamic charts and visual insights."
     }
   ]
 }
+
